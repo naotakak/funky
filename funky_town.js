@@ -30,3 +30,6 @@ var gcd = function(a,b)
 	}
 	return gcd(a,b-a);
 }
+
+console.log("Fib is: "+fibonacci(3));
+console.log("GCD is: "+gcd(30,30));
