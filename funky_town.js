@@ -8,9 +8,9 @@
 var students = ["Brian", "Naotaka", "Bayan", "Khyber", "Ibnul", "Anish", "Terry"];
 
 var randomStudent = function() {
-  var rand = Math.floor(Math.random() * (students.length - 1));
+  var rand = Math.floor(Math.random() * students.length);
   return students[rand];
-}
+};
 
 var fibonacci = function(n) {
 	if (n == 0) {
@@ -22,7 +22,7 @@ var fibonacci = function(n) {
 	else {
 		return (fibonacci(n - 1) + fibonacci(n - 2));
 	}
-}
+};
 
 var gcd = function(a,b) {
 	if ((b % a) == 0) {
@@ -35,7 +35,28 @@ var gcd = function(a,b) {
 		return gcd(a - b,b);
 	}
 	return gcd(a,b - a);
-}
+};
+
+var fibButton = function(e) {
+  console.log("fibButton: " + fibonacci(3));
+};
+
+var gcdButton = function(e) {
+  console.log("gcdButton: " + gcd(45,15));
+};
+
+var randButton = function(e) {
+  console.log("randButton: " + randomStudent());
+};
+
+var fib = document.getElementById('fib');
+fib.addEventListener('click', fibButton);
+
+var geeceedee = document.getElementById('gcd');
+geeceedee.addEventListener('click', gcdButton);
+
+var rand = document.getElementById('rand');
+rand.addEventListener('click', randButton);
 
 console.log("fibonacci(0): " + fibonacci(0));
 console.log("fibonacci(1): " + fibonacci(1));
